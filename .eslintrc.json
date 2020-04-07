@@ -1,0 +1,258 @@
+{
+  "root": true,
+  "parser": "babel-eslint",
+  "extends": [
+    "wordpress",
+    "plugin:jsx-a11y/recommended",
+    "plugin:jest/recommended"
+  ],
+  "env": {
+    "browser": false,
+    "es6": true,
+    "node": true,
+    "mocha": true,
+    "jest/globals": true
+  },
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 8,
+    "ecmaFeatures": {
+      "jsx": true,
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "globals": {
+    "wp": true,
+    "wpApiSettings": true,
+    "window": true,
+    "document": true
+  },
+  "plugins": [
+    "react",
+    "jsx-a11y",
+    "jest"
+  ],
+  "settings": {
+    "react": {
+      "pragma": "wp"
+    }
+  },
+  "rules": {
+    "array-bracket-spacing": [
+      "error",
+      "always"
+    ],
+    "brace-style": [
+      "error",
+      "1tbs"
+    ],
+    "camelcase": [
+      "error",
+      {
+        "properties": "never"
+      }
+    ],
+    "comma-dangle": [
+      "error",
+      "always-multiline"
+    ],
+    "comma-spacing": "warn",
+    "comma-style": "warn",
+    "computed-property-spacing": [
+      "warn",
+      "always"
+    ],
+    "constructor-super": "warn",
+    "dot-notation": "warn",
+    "eol-last": "warn",
+    "eqeqeq": "warn",
+    "func-call-spacing": "warn",
+    "indent": [
+      "warn",
+      "tab",
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "jsx-a11y/label-has-for": [
+      "warn",
+      {
+        "required": "id"
+      }
+    ],
+    "jsx-a11y/media-has-caption": "off",
+    "jsx-a11y/no-noninteractive-tabindex": "off",
+    "jsx-a11y/role-has-required-aria-props": "off",
+    "jsx-quotes": "warn",
+    "key-spacing": "warn",
+    "keyword-spacing": "warn",
+    "lines-around-comment": "off",
+    "no-alert": "warn",
+    "no-bitwise": "warn",
+    "no-caller": "warn",
+    "no-console": 0,
+    "no-const-assign": "warn",
+    "no-debugger": "warn",
+    "no-dupe-args": "warn",
+    "no-dupe-class-members": "warn",
+    "no-dupe-keys": "warn",
+    "no-duplicate-case": "warn",
+    "no-duplicate-imports": "warn",
+    "no-else-return": "warn",
+    "no-eval": "warn",
+    "no-extra-semi": "warn",
+    "no-fallthrough": "warn",
+    "no-lonely-if": "warn",
+    "no-mixed-operators": "warn",
+    "no-mixed-spaces-and-tabs": "warn",
+    "no-multiple-empty-lines": [
+      "warn",
+      {
+        "max": 1
+      }
+    ],
+    "no-multi-spaces": "warn",
+    "no-multi-str": "off",
+    "no-negated-in-lhs": "warn",
+    "no-nested-ternary": "warn",
+    "no-redeclare": "warn",
+    "no-restricted-syntax": [
+      "warn",
+      {
+        "selector": "ImportDeclaration[source.value=/^@wordpress\\u002F.+\\u002F/]",
+        "message": "Path access on WordPress dependencies is not allowed."
+      },
+      {
+        "selector": "ImportDeclaration[source.value=/^blocks$/]",
+        "message": "Use @wordpress/blocks as import path instead."
+      },
+      {
+        "selector": "ImportDeclaration[source.value=/^components$/]",
+        "message": "Use @wordpress/components as import path instead."
+      },
+      {
+        "selector": "ImportDeclaration[source.value=/^date$/]",
+        "message": "Use @wordpress/date as import path instead."
+      },
+      {
+        "selector": "ImportDeclaration[source.value=/^editor$/]",
+        "message": "Use @wordpress/editor as import path instead."
+      },
+      {
+        "selector": "ImportDeclaration[source.value=/^element$/]",
+        "message": "Use @wordpress/element as import path instead."
+      },
+      {
+        "selector": "ImportDeclaration[source.value=/^i18n$/]",
+        "message": "Use @wordpress/i18n as import path instead."
+      },
+      {
+        "selector": "ImportDeclaration[source.value=/^data$/]",
+        "message": "Use @wordpress/data as import path instead."
+      },
+      {
+        "selector": "ImportDeclaration[source.value=/^utils$/]",
+        "message": "Use @wordpress/utils as import path instead."
+      },
+      {
+        "selector": "CallExpression[callee.name=/^__|_n|_x$/]:not([arguments.0.type=/^Literal|BinaryExpression$/])",
+        "message": "Translate function arguments must be string literals."
+      },
+      {
+        "selector": "CallExpression[callee.name=/^_n|_x$/]:not([arguments.1.type=/^Literal|BinaryExpression$/])",
+        "message": "Translate function arguments must be string literals."
+      },
+      {
+        "selector": "CallExpression[callee.name=_nx]:not([arguments.2.type=/^Literal|BinaryExpression$/])",
+        "message": "Translate function arguments must be string literals."
+      }
+    ],
+    "no-shadow": "warn",
+    "no-undef": "warn",
+    "no-undef-init": "warn",
+    "no-unreachable": "warn",
+    "no-unsafe-negation": "warn",
+    "no-unused-expressions": "warn",
+    "no-unused-vars": "warn",
+    "no-useless-computed-key": "warn",
+    "no-useless-constructor": "warn",
+    "no-useless-return": "warn",
+    "no-var": "warn",
+    "no-whitespace-before-property": "warn",
+    "object-curly-spacing": [
+      "off",
+      "always"
+    ],
+    "padded-blocks": [
+      "warn",
+      "never"
+    ],
+    "prefer-const": "warn",
+    "quote-props": [
+      "warn",
+      "as-needed"
+    ],
+    "react/display-name": "off",
+    "react/jsx-curly-spacing": [
+      "off",
+      {
+        "when": "always",
+        "children": true
+      }
+    ],
+    "react/jsx-equals-spacing": "warn",
+    "react/jsx-indent": [
+      "warn",
+      "tab"
+    ],
+    "react/jsx-indent-props": [
+      "warn",
+      "tab"
+    ],
+    "react/jsx-key": "warn",
+    "react/jsx-tag-spacing": "warn",
+    "react/no-children-prop": "off",
+    "react/no-find-dom-node": "warn",
+    "react/prop-types": "off",
+    "semi": "warn",
+    "semi-spacing": "warn",
+    "space-before-blocks": [
+      "warn",
+      "always"
+    ],
+    "space-before-function-paren": [
+      "warn",
+      "never"
+    ],
+    "space-in-parens": [
+      "warn",
+      "always"
+    ],
+    "space-infix-ops": [
+      "warn",
+      {
+        "int32Hint": false
+      }
+    ],
+    "space-unary-ops": [
+      "warn",
+      {
+        "overrides": {
+          "!": true
+        }
+      }
+    ],
+    "template-curly-spacing": [
+      "off",
+      "always"
+    ],
+    "valid-jsdoc": [
+      "warn",
+      {
+        "requireReturn": false
+      }
+    ],
+    "valid-typeof": "warn",
+    "yoda": "off"
+  }
+}
