@@ -13,15 +13,15 @@ const editBlocksCSSPlugin = new ExtractTextPlugin( {
 	filename: './dist/blocks.editor.build.css',
 } );
 
-const post_css_plugins = [
-	require("postcss-import"),
-	require("tailwindcss")("./tailwind.config.js"),
-	require("postcss-nested"),
-	require("postcss-custom-properties"),
+const postCssPlugins = [
+	require( "postcss-import" ),
+	require( "tailwindcss" )( "./tailwind.config.js" ),
+	require( "postcss-nested" ),
+	require( "postcss-custom-properties" ),
 ];
 
-post_css_plugins.push(
-	autoprefixer({
+postCssPlugins.push(
+	autoprefixer( {
 		browsers: [
 			">1%",
 			"last 4 versions",
@@ -29,7 +29,7 @@ post_css_plugins.push(
 			"not ie < 9", // React doesn't support IE8 anyway
 		],
 		flexbox: "no-2009",
-	})
+	} )
 );
 
 // Configuration for the ExtractTextPlugin — DRY rule.
@@ -42,7 +42,7 @@ const extractConfig = {
 			options: {
 				ident: "postcss",
 				sourceMap: true,
-				plugins: post_css_plugins,
+				plugins: postCssPlugins,
 			},
 		},
 		// "sass" loader converts SCSS to CSS.

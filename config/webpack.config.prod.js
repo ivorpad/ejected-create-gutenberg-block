@@ -39,35 +39,33 @@ const editBlocksCSSPlugin = new ExtractTextPlugin( {
 	filename: './dist/blocks.editor.build.css',
 } );
 
+const postCssPlugins = [
+	require( "postcss-import" ),
+	require( "tailwindcss" )( "./tailwind.config.js" ),
+	require( "postcss-nested" ),
+	require( "postcss-custom-properties" ),
+];
+
 // Configuration for the ExtractTextPlugin — DRY rule.
 const extractConfig = {
 	use: [
 		// "postcss" loader applies autoprefixer to our CSS.
-		{ loader: 'raw-loader' },
+		{ loader: "raw-loader" },
 		{
-			loader: 'postcss-loader',
+			loader: "postcss-loader",
 			options: {
-				ident: 'postcss',
-				plugins: [
-					autoprefixer( {
-						browsers: [
-							'>1%',
-							'last 4 versions',
-							'Firefox ESR',
-							'not ie < 9', // React doesn't support IE8 anyway
-						],
-						flexbox: 'no-2009',
-					} ),
-				],
+				ident: "postcss",
+				sourceMap: true,
+				plugins: postCssPlugins,
 			},
 		},
 		// "sass" loader converts SCSS to CSS.
 		{
-			loader: 'sass-loader',
+			loader: "sass-loader",
 			options: {
 				// Add common CSS file for variables and mixins.
 				data: '@import "./src/common.scss";\n',
-				outputStyle: 'compressed',
+				outputStyle: "compressed",
 			},
 		},
 	],
